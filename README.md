@@ -8,15 +8,18 @@ Basic Features to be implemented
 
 --> User Register/Login
 
---> Community chat
+--> Community Chat
 
---> Individual chat
+--> Individual Chat
+
+--> Chat Limit and Load More
 
 --> Dark Mode
 
 --> Recaptha on register
 
 Additional Advanced Features
+
 --> Friends
 
 --> Report a User(if complaint report exceeds a limit for eg. 10 reports)
