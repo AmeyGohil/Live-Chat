@@ -8,6 +8,8 @@ Basic Features to be implemented
 
 --> User Register/Login
 
+--> Admin Page to Edit Details
+
 --> Community Chat
 
 --> Individual Chat
