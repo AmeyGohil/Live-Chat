@@ -10,15 +10,17 @@ Basic Features to be implemented
 
 --> Admin Page to Edit Details
 
+--> Active/Inactive Users
+
 --> Community Chat
 
 --> Individual Chat
 
---> Chat Limit and Load More
+--> Chat Message Limit and Load More
 
 --> Dark Mode
 
---> Recaptha on register
+--> Recaptha on Register
 
 Additional Advanced Features
 
@@ -28,3 +30,26 @@ Additional Advanced Features
 
 --> Any other suggestions are welcome
 
+--> Public/Private Channels/Groups
+
+
+Object|Properties
+  
+--> User
+    -> name
+    -> password
+    -> is_logged_in
+    -> freinds
+    -> groups
+    
+--> Chat
+    -> id
+    -> user
+    -> time
+    -> text
+    -> group
+    
+--> Group
+    -> users
+    -> public/private
+    
