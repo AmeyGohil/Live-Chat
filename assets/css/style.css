@@ -1,0 +1,232 @@
+body{
+    overflow: hidden;
+    color: #212121;
+}
+
+#paper-back {
+    width: 100%;
+    height: 100vh;
+    background-color: #243040;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 33px;
+}
+#paper-back div+div {
+    padding: 120px 34px;
+}
+#paper-back div a {
+    text-align: right;
+    display: block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.paper-window {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 2;
+}
+.paper-window.tilt {
+    overflow: hidden;
+    pointer-events: none;
+}
+.paper-window.tilt .paper-front {
+    -webkit-transform: rotate(-10deg) translateZ(0);
+    transform: rotate(-10deg) translateZ(0);
+}
+
+.paper-front {
+    pointer-events: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    -webkit-transform-origin: center 70%;
+    transform-origin: center 70%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.paper-front nav{
+    transform: translateY(0);
+}
+
+.custom_container section {
+    height: calc(100vh - 64px);
+    text-align: center;
+}
+.custom_container section .section{
+    width: 100%;
+}
+@media (max-width: 600px) {
+
+}
+
+.hamburger {
+    /*position: fixed;*/
+    z-index: 4;
+    /*top: 30px;*/
+    /*right: 30px;*/
+    width: 45px;
+    height: 34px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hamburger span {
+    position: relative;
+}
+.hamburger span, .hamburger span:before, .hamburger span:after {
+    display: block;
+    width: 45px;
+    height: 6px;
+    background-color: #212121;
+    border-radius: 2px;
+}
+.hamburger span:before, .hamburger span:after {
+    content: '';
+    position: absolute;
+}
+.hamburger span:before {
+    bottom: -14px;
+}
+.hamburger span:after {
+    bottom: -28px;
+}
+
+.close {
+    position: fixed;
+    top:15px;
+    right: 15px;
+    width: 45px;
+    height: 34px;
+    cursor: pointer;
+}
+.close:before, .close:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 45px;
+    height: 6px;
+    top: 50%;
+    background-color: white;
+    border-radius: 2px;
+}
+.close:before {
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+.close:after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(-50%) rotate(-45deg);
+}
+nav .brand-logo, nav ul{
+    display: flex!important;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+nav .brand-logo img {
+    height: fit-content;
+    width: fit-content;
+}
+.nav-wrapper{
+    /*padding-right:20px ;*/
+    /*padding-left:20px ;*/
+}
+
+.ml11 {
+    font-weight: 700;
+    font-size: 3.5em;
+}
+
+.ml11 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #212121;
+    transform-origin: 0 50%;
+}
+
+.ml11 .line1 {
+    top: 0;
+    left: 0;
+}
+
+.ml11 .letter {
+    display: inline-block;
+    line-height: 1em;
+    font-style: italic;
+}
+/*.letter:nth-child(1), .letter:nth-child(2), .letter:nth-child(3), .letter:nth-child(4), .letter:nth-child(5){*/
+.letter:nth-child(1){
+    color: #448aff;
+}
+.letter:nth-child(6),.letter:nth-child(11){
+    color: #66bb6a;
+}
+
+
+.roll_in{
+    animation: roll_in 0.5s ease-in forwards;
+}
+.roll_out{
+    animation: roll_out 0.5s ease-in forwards;
+}
+@keyframes roll_in {
+    0% {
+        -webkit-transform: rotate(90deg) translateZ(0);
+        transform: rotate(90deg) translateZ(0);
+    }
+    100% {
+        -webkit-transform: rotate(0deg) translateZ(0);
+        transform: rotate(0deg) translateZ(0);
+    }
+}
+@keyframes roll_out {
+    0% {
+        overflow: hidden;
+        pointer-events: none;
+        -webkit-transform: rotate(-10deg) translateZ(0);
+        transform: rotate(-10deg) translateZ(0);
+    }
+    100% {
+        overflow: hidden;
+        pointer-events: none;
+        -webkit-transform: rotate(-180deg) translateZ(0);
+        transform: rotate(-180deg) translateZ(0);
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+.ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+}
+
+.ml2 .letter2 {
+    color: #2196f3;
+    display: inline-block;
+    line-height: 1em;
+}

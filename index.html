@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Live Chat!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="github.com/AmeyGohil">
+    <link rel="image_src" href="http://smp.iitb.ac.in/static/img/thumbnail/thumbnail.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+
 </head>
 <body>
+
+<div id="paper-back">
+    <div class="close"></div>
+    <div>
+        <a id="page-1" class="active" href="#">Home</a>
+        <a id="page-2" href="#">About Us</a>
+        <a id="page-3" href="#">Our Work</a>
+        <a id="page-4" href="#">Contact</a>
+    </div>
+</div>
+<div class="paper-window">
+    <div class="paper-front" id="window-1">
+        <nav class="blue lighten-1">
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo"><img src="assets/images/logo.png" alt="Live Chat Logo"></a>
+                <ul class="right hide-on-med-and-down waves-effect">
+                    <li><div class="hamburger grey-text text-darken-4"><span></span></div></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="custom_container blue lighten-5">
+            <section class="valign-wrapper">
+                <div class="section">
+                    <h1 class="ml2">WELCOME&nbsp;&nbsp;&nbsp;TO</h1>
+                    <h1 class="ml11">
+                      <span class="text-wrapper">
+                        <span class="line line1"></span>
+                        <span class="letters">Live&nbsp;Chat&nbsp;.</span>
+                      </span>
+                    </h1>
+                    <a class="waves-effect waves-light btn blue accent-2"><i class="fa fa-pencil-square-o right"></i>register</a>&nbsp;
+                    <a class="waves-effect waves-light btn green lighten-1"><i class="fa fa-sign-in right"></i>login</a>
+
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="paper-front" id="window-2" style="display: none">
+        <nav class="blue lighten-1">
+            <div class="nav-wrapper">
+                <a href="index.html" class="brand-logo"><img src="assets/images/logo.png" alt="Live Chat Logo"></a>
+                <ul class="right hide-on-med-and-down waves-button-input">
+                    <li><div class="hamburger grey-text text-darken-4"><span></span></div></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="custom_container blue lighten-5">
+            <section class="valign-wrapper">
+                <div class="section">
+                    <h1 class="ml11">
+                      <span class="text-wrapper">
+                        <span class="line line1"></span>
+                        <span class="letters">Rec.&nbsp;Chat&nbsp;.</span>
+                      </span>
+                    </h1>
+                    <a class="waves-effect waves-light btn blue accent-2"><i class="fa fa-pencil-square-o right"></i>register</a>&nbsp;
+                    <a class="waves-effect waves-light btn green lighten-1"><i class="fa fa-sign-in right"></i>login</a>
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="assets/libraries/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="assets/libraries/jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="assets/libraries/anime/anime.min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 
 </body>
 </html>
