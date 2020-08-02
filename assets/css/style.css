@@ -333,3 +333,9 @@ form{
 .form{
     border: 20px solid rgba(0,0,0,0.5);
 }
+.helper-text{
+    text-align: left;
+}
+.form form .helper-text.red-text, .form form .helper-text.green-text{
+    margin-left:3rem!important;
+}
