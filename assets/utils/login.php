@@ -28,6 +28,11 @@ function login(){
             $_SESSION['email']=$email;
             $_SESSION['id']=$result['id'];
             $_SESSION['logged_in']=true;
+            $sql="INSERT INTO `activity`(`user_id`) VALUES(:user_id)";
+            $handle=$link->prepare($sql);
+            $handle->execute(array(
+                'user_id'=>$result['id'],
+            ));
             return 'S';
         }
         else{

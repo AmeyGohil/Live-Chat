@@ -41,6 +41,11 @@ function register(){
             $_SESSION['email']=$email;
             $_SESSION['id']=get_last_id();
             $_SESSION['logged_in']=true;
+            $sql="INSERT INTO `activity`(`user_id`) VALUES(:user_id)";
+            $handle=$link->prepare($sql);
+            $handle->execute(array(
+                'user_id'=>$_SESSION['id'],
+            ));
             return 'S';
         }
         else{
