@@ -140,4 +140,26 @@ $(document).ready(function (){
 			duration: 600,
 			delay: (el, i) => 100*i
 		});
+
+	$("#get_started").click(function (e) {
+		e.preventDefault();
+		$(this).addClass('btn--clicked');
+		let el = $(".color--ripple");
+		el.addClass('expanded');
+		$("#close_form").addClass('show');
+		$("#form_div").addClass('show');
+	});
+	$("#close_form").click(function (e) {
+		$(".btn--clicked").removeClass('btn--clicked');
+		$(".show").removeClass('show');
+		$(".expanded").removeClass('expanded');
+	});
+	($(window).width()>500)?$("#form_div>div").css("min-width","500px"):$("#form_div>div").css("min-width",$(window).width());
+	$('.tabs').tabs({
+		duration:500,
+		swipeable: true
+	});
 });
+// var instance = M.Tabs.getInstance(elem);
+// instance.updateTabIndicator();
+// instance.select('test1');
