@@ -24,7 +24,7 @@ function register(){
         session_start();
         if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])){
             $link = linkToLC();
-            $email=$_POST['email'];
+            $email=strtolower(trim($_POST['email']));
             if(check_if_user_exist($email)){
                 return 'user_exist';
             }

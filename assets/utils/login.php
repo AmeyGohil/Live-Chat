@@ -6,7 +6,7 @@ function login(){
     try {
         session_start();
         if(isset($_POST['email']) && isset($_POST['pass'])){
-            $email=$_POST['email'];
+            $email=strtolower(trim($_POST['email']));
             $password=$_POST['pass'];
             $link = linkToLC();
             $sql="SELECT `id`,`name` FROM `users` WHERE `email`=:email";

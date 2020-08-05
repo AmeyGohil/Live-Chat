@@ -19,7 +19,7 @@ $(document).ready(function () {
 			return;
 		}
 		let hashpassword = CryptoJS.HmacSHA256(pass, "LiveChat").toString();
-console.log(hashpassword);
+		console.log(hashpassword);
 		$.ajax({
 			url: "assets/utils/login.php",
 			type:"POST",

@@ -4,6 +4,16 @@ function Logout(){
     // If you are using session_name("something"), don't forget it now!
     session_start();
 
+    if(isset($_SESSION['id'])){
+        include 'db_linker.php';
+        $link = linkToLC();
+        $sql="INSERT INTO `activity`(`user_id`,`status`) VALUES(:user_id,0)";
+        $handle=$link->prepare($sql);
+        $handle->execute(array(
+            'user_id'=>$_SESSION['id'],
+        ));
+    }
+
     // Unset all of the session variables.
     $_SESSION = array();
 

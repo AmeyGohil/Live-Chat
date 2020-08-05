@@ -10,11 +10,11 @@ Basic Features to be implemented
 
 --> User Register/Login | Done
 
---> Admin Page to Edit Details
+--> Admin Page to Edit Details | Done
 
---> Active/Inactive Users
+--> Community Chat | In Progress
 
---> Community Chat
+--> Active/Inactive Users | In Progress
 
 --> Individual Chat
 

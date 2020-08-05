@@ -14,13 +14,14 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../assets/libraries/font-awesome/css/font-awesome.min.css"/>
     <link type="text/css" rel="stylesheet" href="../assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../assets/css/side-menu.css"/>
     <link type="text/css" rel="stylesheet" href="../assets/css/profile.css"/>
 
 </head>
 <body>
 
 <main>
-    <div class="overlay" style="display: none;"></div>
+    <div class="overlay"></div>
     <div id="main">
         <nav class="blue lighten-1">
             <div class="nav-wrapper custom_container">
@@ -31,35 +32,39 @@
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="col m10 s12">
-                            <div class="section">
-                                <div class="input-field">
+                        <div class="col m9 s12">
+                            <div class="section row" id="detail-form">
+                                <div class="input-field col m12 s12">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input id="name" type="text" class="validate" disabled minlength="4">
                                     <span class="helper-text" data-error="Please enter a valid name" data-success="Valid &check;"></span>
                                     <label for="name">Name</label>
                                 </div>
-                                <div class="input-field">
+                                <div class="input-field col s12 m12">
                                     <i class="material-icons prefix">mail</i>
-                                    <input id="email" type="text" class="validate" disabled>
-                                    <span class="helper-text" data-error="Please enter a valid email" data-success="Valid &check;"></span>
+                                    <input id="email" type="email" class="validate" disabled>
+                                    <span class="helper-text" data-error="Please enter a valid email address" data-success="Valid &check;"></span>
                                     <label for="email">E-Mail Address</label>
-                                </div>
-                                <div class="input-field">
-                                    <i class="material-icons prefix">lock</i>
-                                    <i class="waves-effect material-icons left postfix">remove_red_eye</i>
-                                    <input id="password" type="text" class="validate" disabled>
-                                    <span class="helper-text" data-error="Password must be at least 8 characters long" data-success="Valid &check;"></span>
-                                    <label for="password">Password</label>
                                 </div>
                                 <span class="helper-text red-text" style="display:none;" id="error"></span>
                             </div>
+                            <div class="section row" id="pass-form" style="display: none">
+                                <div class="input-field col s12 m12">
+                                    <i class="material-icons prefix">lock</i>
+                                    <i id="eye" class="waves-effect fa fa-eye left postfix"></i>
+                                    <input id="password" type="password" class="validate" minlength="8">
+                                    <span class="helper-text" data-error="Password must be at least 8 characters long" data-success="Valid &check;"></span>
+                                    <label for="password">Password</label>
+                                </div>
+                                <span class="helper-text red-text" style="display:none;" id="pass-error"></span>
+                            </div>
                         </div>
-                        <div class="col m2 s12">
+                        <div class="col m3 s12">
                             <div class="button_section section">
                                 <div class="button-container">
-                                    <button class="waves-effect waves-light btn blue accent-2 scale-transition scale-in" type="submit" name="action_register" id="edit">EDIT<i class="fa fas fa-pencil right"></i></button>
-                                    <button class="waves-effect waves-light btn green lighten-1 scale-transition scale-out" type="submit" name="action_register" id="save">SAVE<i class="fa fas fa-check right"></i></button>
+                                    <button class="waves-effect waves-light btn blue accent-2 scale-transition scale-in" type="submit" id="edit">EDIT<i class="fa fas fa-pencil right"></i></button>
+                                    <button class="waves-effect waves-light btn green lighten-1 scale-transition scale-out" type="submit" id="save">UPDATE<i class="fa fas fa-sign-in right"></i></button>
+                                    <button class="waves-effect waves-light btn blue accent-2 scale-transition scale-in" type="submit" id="change-pass">CHANGE PASSWORD<i class="fa fas fa-lock right"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +74,7 @@
         </div>
     </div>
     <div class="side-menu">
-        <div class="hamburger z-depth-1">
+        <div class="hamburger">
             <svg class="ham ham2" viewBox="10 10 80 80" width="40" height="40">
                 <path class="line top" d="m 70,33 h -40 c -6.5909,0 -7.763966,-4.501509 -7.763966,-7.511428 0,-4.721448 3.376452,-9.583771 13.876919,-9.583771 14.786182,0 11.409257,14.896182 9.596449,21.970818 -1.812808,7.074636 -15.709402,12.124381 -15.709402,12.124381" />
                 <path class="line middle" d="m 30,50 h 40" />
@@ -79,8 +84,8 @@
         <div class="side-menu-items">
             <div class="side-menu-div">
                 <ul>
-                    <li><a href=""><i class="material-icons left">add</i>Link 1</a></li>
-                    <li><a href="">Link 2</a></li>
+                    <li><a href="index.html"><i class="material-icons left">add</i>Home</a></li>
+                    <li><a href="../profile"><i class="material-icons left">person</i>Profile</a></li>
                 </ul>
             </div>
         </div>
@@ -91,7 +96,8 @@
 <script type="text/javascript" src="../assets/libraries/materialize/js/materialize.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/anime/anime.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/crypto/crypto-js.min.js"></script>
-<script type="text/javascript" src="../assets/js/profile.js"></script>
+<script type="text/javascript" src="../assets/js/side-menu.js"></script>
+<script type="text/javascript" src="../assets/js/profile/profile.js"></script>
 
 </body>
 </html>
