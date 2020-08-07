@@ -1,7 +1,7 @@
 let name,email;
 $(document).ready(function () {
 	$.ajax({
-		url: "../assets/utils/profile/getDetails.php",
+		url: "../assets/utils/getDetails.php",
 		type: "POST",
 		success: function (result) {
 			if(result === 'F'){

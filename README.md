@@ -12,11 +12,11 @@ Basic Features to be implemented
 
 --> Admin Page to Edit Details | Done
 
---> Community Chat | In Progress
+--> Community Chat | Done
 
---> Active/Inactive Users | In Progress
+--> Active/Inactive Users | Not Possible in SSE, as SSE has uni-direction connection unlike WebSockets
 
---> Individual Chat
+--> Individual Chat | In Progress
 
 --> Chat Message Limit and Load More
 

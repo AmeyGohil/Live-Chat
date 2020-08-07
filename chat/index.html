@@ -29,29 +29,176 @@
             </div>
         </nav>
         <div class="chat-container">
-            <div class="chat-div">
-                <div class="chat-thread">
-                    <section class="section">
-                        <span class="divider"></span>
-                        <span>No chats above this</span>
-                    </section>
-                    <div class="me">
-                        <div class="name">Amey Gohil</div>
-                        <div class="text">Are we meeting today?</div>
-                        <div class="time">11:00 PM</div>
+            <div class="chat-list">
+                <div class="">
+                    <div class="chat-tabs-container">
+                        <div class="chat-tabs">
+                            <div class="waves-effect waves-light chat-tab active" data-target="#users"><i class="material-icons">person</i>Users</div>
+                            <div class="waves-effect waves-light chat-tab" data-target="#groups"><i class="material-icons">people</i>Groups</div>
+                        </div>
                     </div>
-                    <div class="not-me">
-                        <div class="name">Amey Gohil</div>
-                        <div class="text">yes, what time suits you?</div>
-                        <div class="time">11:00 PM</div>
+                    <div id="users" class="chat-tab-div">
+                        <section class="chat-tab-list">
+                            <header>
+                                <input type = 'search' placeholder="&#xf002;&nbsp; Search" class="filter">
+                            </header>
+                            <ul class="filter before">
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div id="groups" class="chat-tab-div" style="display: none">
+                        <section class="chat-tab-list">
+                            <header>
+                                <input type = 'search' placeholder="&#xf002;&nbsp; Search" class="filter">
+                            </header>
+                            <ul class="filter before">
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                                <li>
+                                    <span class='img'>
+                                        <i class="fa fa-users"></i>
+                                    </span>
+                                    <span class='name'>Amey Gohil</span>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
                 </div>
             </div>
-            <div class="input-div">
-                <form class="chat-window">
-                    <input class="chat-window-message" name="chat-window-message" type="text" autocomplete="off" placeholder="Type a message..." />
-                    <div class="waves-effect waves-teal waves-light" id="send"><i class="material-icons">send</i></div>
-                </form>
+            <div class="chat-section">
+                <div class="chat-header">
+                    <nav class="blue lighten-1">
+                        <div class="nav-wrapper custom_container">
+                            <a href="index.html" class="brand-logo">Home !</a>
+<!--                            <a href="index.html" class="right"><i class="material-icons">group_add</i></a>-->
+                        </div>
+                    </nav>
+                </div>
+                <div class="chat-div">
+                    <div class="chat-thread">
+                        <section class="section">
+                            <span class="divider"></span>
+                            <span>No chats above this</span>
+                        </section>
+                        <div class="me">
+                            <div class="name">Amey Gohil</div>
+                            <div class="text">Are we meeting today?</div>
+                            <div class="time">11:00 PM</div>
+                        </div>
+                        <div class="not-me">
+                            <div class="name">Amey Gohil</div>
+                            <div class="text">yes, what time suits you?</div>
+                            <div class="time">11:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-div">
+                    <form class="chat-window">
+                        <input class="chat-window-message" name="chat-window-message" type="text" autocomplete="off" placeholder="Type a message..." />
+                        <div class="waves-effect waves-teal waves-light" id="send"><i class="material-icons">send</i></div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

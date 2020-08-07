@@ -1,5 +1,5 @@
 <?php
-include '../db_linker.php';
+include 'db_linker.php';
 
 function getDetails(){
     try {

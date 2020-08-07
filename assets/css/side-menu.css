@@ -16,11 +16,11 @@
     width: 25%;
     z-index: 999;
     height: 100%;
-    position: absolute;
+    position: fixed;
     right: -25%;
     top: 0;
     background: blue;
-    transition: all 0.5s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+    transition: all 0.5s ease-in-out;
 }
 .side-menu.active{
     right: 0;

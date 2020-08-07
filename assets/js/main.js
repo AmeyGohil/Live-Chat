@@ -1,5 +1,15 @@
 $(document).ready(function (){
 
+	$.ajax({
+		url: "assets/utils/getDetails.php",
+		type: "POST",
+		success: function (result) {
+			if(result !== 'F'){
+				window.location.href = './chat';
+			}
+		}
+	});
+
 	let paperMenu = {
 		$window: $('.paper-window'),
 		$paperFront: $('.paper-window .paper-front'),
