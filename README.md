@@ -28,30 +28,42 @@ Additional Advanced Features
 
 --> Friends
 
---> Report a User(if complaint report exceeds a limit for eg. 10 reports)
-
---> Any other suggestions are welcome
+--> Report a User(disable user for 7 days if complaint report exceeds a limit for eg. 10 reports)
 
 --> Public/Private Channels/Groups
+
+--> Any other suggestions are welcome
 
 
 Object|Properties
   
 --> User
+
     -> name
+
     -> password
-    -> is_logged_in
+    
     -> freinds
+    
     -> groups
     
+    
 --> Chat
+    
     -> id
+    
     -> user
+    
     -> time
+    
     -> text
+    
     -> group
     
+    
 --> Group
+    
     -> users
+    
     -> public/private
     
