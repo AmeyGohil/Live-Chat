@@ -15,7 +15,7 @@ function login(){
                 'email'=>$email,
             ));
             if(!$handle->rowCount()) return 'email_not_found';
-            $sql="SELECT `id`,`name` FROM `users` WHERE `email`=:email AND `password`=:password";
+            $sql="SELECT `id`,`name`,`token` FROM `users` WHERE `email`=:email AND `password`=:password";
             $handle=$link->prepare($sql);
             $handle->execute(array(
                 'email'=>$email,
@@ -24,7 +24,8 @@ function login(){
             if(!$handle->rowCount()) return 'pass_wrong';
             $result = $handle->fetchAll(PDO::FETCH_ASSOC);
             $result = $result[0];
-            $_SESSION['name']=$result[0]['name'];
+            $_SESSION['name']=$result['name'];
+            $_SESSION['token']=$result['token'];
             $_SESSION['email']=$email;
             $_SESSION['id']=$result['id'];
             $_SESSION['logged_in']=true;

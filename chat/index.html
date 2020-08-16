@@ -25,7 +25,7 @@
     <div id="main">
         <nav class="blue lighten-1">
             <div class="nav-wrapper custom_container">
-                <a href="index.html" class="brand-logo">Home !</a>
+                <a href="index.html" class="brand-logo">Live Chat !</a>
             </div>
         </nav>
         <div class="chat-container">
@@ -33,6 +33,7 @@
                 <div class="">
                     <div class="chat-tabs-container">
                         <div class="chat-tabs">
+<!--                            <div id="active_tab" style="display: none">user</div>-->
                             <div class="waves-effect waves-light chat-tab active" data-target="#users"><i class="material-icons">person</i>Users</div>
                             <div class="waves-effect waves-light chat-tab" data-target="#groups"><i class="material-icons">people</i>Groups</div>
                         </div>
@@ -40,164 +41,90 @@
                     <div id="users" class="chat-tab-div">
                         <section class="chat-tab-list">
                             <header>
-                                <input type = 'search' placeholder="&#xf002;&nbsp; Search" class="filter">
+                                <input type='search' placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search" class="filter">
+                                <i class="material-icons">search</i>
                             </header>
                             <ul class="filter before">
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
+                                <div class="chat-list-loader scale-transition">
+                                    <div class='loader loader1'>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </ul>
                         </section>
                     </div>
                     <div id="groups" class="chat-tab-div" style="display: none">
                         <section class="chat-tab-list">
                             <header>
-                                <input type = 'search' placeholder="&#xf002;&nbsp; Search" class="filter">
+                                <input type='search' placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search" class="filter">
+                                <i class="material-icons">search</i>
                             </header>
-                            <ul class="filter before">
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                                <li>
-                                    <span class='img'>
-                                        <i class="fa fa-users"></i>
-                                    </span>
-                                    <span class='name'>Amey Gohil</span>
-                                </li>
-                            </ul>
+                            <ul class="filter before"></ul>
                         </section>
                     </div>
                 </div>
             </div>
             <div class="chat-section">
-                <div class="chat-header">
-                    <nav class="blue lighten-1">
-                        <div class="nav-wrapper custom_container">
-                            <a href="index.html" class="brand-logo">Home !</a>
-<!--                            <a href="index.html" class="right"><i class="material-icons">group_add</i></a>-->
+                <div class="chat-splash">
+                    <div>
+                        <div class="chat-splash-img">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                <g><g><path d="M384,0H25.6C10.24,0,0,10.24,0,25.6v256c0,15.36,10.24,25.6,25.6,25.6h25.6v128l128-128H384c15.36,0,25.6-10.24,25.6-25.6 v-256C409.6,10.24,399.36,0,384,0z M102.4,179.2c-15.36,0-25.6-10.24-25.6-25.6c0-15.36,10.24-25.6,25.6-25.6 c15.36,0,25.6,10.24,25.6,25.6C128,168.96,117.76,179.2,102.4,179.2z M204.8,179.2c-15.36,0-25.6-10.24-25.6-25.6 c0-15.36,10.24-25.6,25.6-25.6c15.36,0,25.6,10.24,25.6,25.6C230.4,168.96,220.16,179.2,204.8,179.2z M307.2,179.2 c-15.36,0-25.6-10.24-25.6-25.6c0-15.36,10.24-25.6,25.6-25.6c15.36,0,25.6,10.24,25.6,25.6 C332.8,168.96,322.56,179.2,307.2,179.2z"/></g></g>
+                                <g><g><path d="M486.4,230.4h-25.6v102.4c0,15.36-10.24,25.6-25.6,25.6H204.8v51.2c0,15.36,10.24,25.6,25.6,25.6h128L460.8,512v-76.8 h25.6c12.8,0,25.6-10.24,25.6-25.6V256C512,243.2,499.2,230.4,486.4,230.4z"/></g></g>
+                                <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                            </svg>
                         </div>
-                    </nav>
+                        <span class="chat-splash-text">Select any group or user to start the chat!</span>
+                    </div>
                 </div>
-                <div class="chat-div">
-                    <div class="chat-thread">
-                        <section class="section">
-                            <span class="divider"></span>
-                            <span>No chats above this</span>
-                        </section>
-                        <div class="me">
-                            <div class="name">Amey Gohil</div>
-                            <div class="text">Are we meeting today?</div>
-                            <div class="time">11:00 PM</div>
-                        </div>
-                        <div class="not-me">
-                            <div class="name">Amey Gohil</div>
-                            <div class="text">yes, what time suits you?</div>
-                            <div class="time">11:00 PM</div>
+                <div class="chat-loader" style="display: none">
+                    <div class="chat-list-loader scale-transition">
+                        <div class='loader loader1'>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="chat-body">
+                    <div class="chat-header">
+                        <nav class="blue lighten-1">
+                            <div class="nav-wrapper custom_container">
+                                <a href="index.html" id="chat-header" class="brand-logo">Home !</a>
+    <!--                            <a href="index.html" class="right"><i class="material-icons">group_add</i></a>-->
+                            </div>
+                        </nav>
+                    </div>
 
-                <div class="input-div">
-                    <form class="chat-window">
-                        <input class="chat-window-message" name="chat-window-message" type="text" autocomplete="off" placeholder="Type a message..." />
-                        <div class="waves-effect waves-teal waves-light" id="send"><i class="material-icons">send</i></div>
-                    </form>
+                    <div class="chat-div">
+                        <div class="chat-thread">
+                        </div>
+                    </div>
+                    <div class="input-div">
+                        <form class="chat-window">
+                            <input class="chat-window-message" data-token="null" data-type="null" name="chat-window-message" type="text" autocomplete="off" placeholder="Type a message..." />
+                            <div class="waves-effect waves-teal waves-light" id="send"><i class="material-icons">send</i></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,6 +142,7 @@
                 <ul>
                     <li><a href="index.html"><i class="material-icons left">add</i>Home</a></li>
                     <li><a href="../profile"><i class="material-icons left">person</i>Profile</a></li>
+                    <li><a href="#!" onclick="logout()"><i class="material-icons left">exit_to_app</i>LogOut</a></li>
                 </ul>
             </div>
         </div>
@@ -226,6 +154,10 @@
 <script type="text/javascript" src="../assets/libraries/anime/anime.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/crypto/crypto-js.min.js"></script>
 <script type="text/javascript" src="../assets/js/side-menu.js"></script>
+<script type="text/javascript" src="../assets/js/logout.js"></script>
+<script type="text/javascript" src="../assets/js/get_days.js"></script>
+<script type="text/javascript" src="../assets/js/get_12_hr.js"></script>
+<script type="text/javascript" src="../assets/js/get_24_hr.js"></script>
 <script type="text/javascript" src="../assets/js/chat/chat.js"></script>
 
 </body>

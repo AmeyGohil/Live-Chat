@@ -1,5 +1,6 @@
 <?php
 include 'db_linker.php';
+include 'token.php';
 
 function get_last_id(){
     $link = linkToLC();
@@ -19,6 +20,13 @@ function check_if_user_exist($email){
     if(count($result)) return true;
     return false;
 }
+function fetch_existing_tokens(){
+    $link = linkToLC();
+    $sql="SELECT `token` FROM `users`";
+    $handle=$link->prepare($sql);
+    $handle->execute();
+    return $handle->fetchAll(PDO::FETCH_COLUMN);
+}
 function register(){
     try {
         session_start();
@@ -30,22 +38,38 @@ function register(){
             }
             $name=$_POST['name'];
             $pass=$_POST['pass'];
-            $sql="INSERT INTO `users`(`name`, `email`, `password`) VALUES (:name,:email,:pass)";
+            $token = getRandomToken(20);
+            $existing_tokens = fetch_existing_tokens();
+            while(array_search($token,$existing_tokens)) $token = getRandomToken(20);
+            $sql="INSERT INTO `users`(`name`, `email`, `password`, `token`) VALUES (:name,:email,:pass,:token)";
             $handle=$link->prepare($sql);
             $handle->execute(array(
                 'name'=>$name,
                 'email'=>$email,
-                'pass'=>$pass
+                'pass'=>$pass,
+                'token'=>$token
             ));
             $_SESSION['name']=$name;
+            $_SESSION['token']=$token;
             $_SESSION['email']=$email;
             $_SESSION['id']=get_last_id();
+            $id = $_SESSION['id'];
             $_SESSION['logged_in']=true;
-            $sql="INSERT INTO `activity`(`user_id`) VALUES(:user_id)";
-            $handle=$link->prepare($sql);
-            $handle->execute(array(
-                'user_id'=>$_SESSION['id'],
-            ));
+            $sql = 'SELECT `id` FROM `users`';
+            $handle = $link->prepare($sql);
+            $handle->execute();
+            if ($handle->rowCount()>1) {
+                $result = $handle->fetchAll(PDO::FETCH_COLUMN);
+                for($i=0;$i<(count($result)-1);$i++){
+                    $sql="INSERT INTO `chat_ids` (`from_id`, `to_id`, `chat_id`) VALUES (:from_id,:to_id,:chat_id)";
+                    $handle=$link->prepare($sql);
+                    $handle->execute(array(
+                        'from_id'=>$result[$i],
+                        'to_id'=>$id,
+                        'chat_id'=>$result[$i].'_'.$id
+                    ));
+                }
+            }
             return 'S';
         }
         else{
