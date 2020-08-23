@@ -110,7 +110,7 @@
                         <nav class="blue lighten-1">
                             <div class="nav-wrapper custom_container">
                                 <a href="index.html" id="chat-header" class="brand-logo">Home !</a>
-    <!--                            <a href="index.html" class="right"><i class="material-icons">group_add</i></a>-->
+                                <a href="#!" class="right waves-effect waves-light" style="display: none; padding: 0 20px; border-radius: 2000px" id="delete_group"><i class="material-icons">delete</i></a>
                             </div>
                         </nav>
                     </div>
@@ -142,12 +142,30 @@
                 <ul>
                     <li><a href="index.html"><i class="material-icons left">add</i>Home</a></li>
                     <li><a href="../profile"><i class="material-icons left">person</i>Profile</a></li>
+                    <li><a href="#!" id="addGroup" data-target="addGroupModal" class="modal-trigger"><i class="material-icons left">group_add</i>Create Group</a></li>
+                    <li><a href="#!"><i class="material-icons left">wallpaper</i>Wallpaper</a></li>
+                    <li><a href="../games"><i class="material-icons left">videogame_asset</i>Games</a></li>
                     <li><a href="#!" onclick="logout()"><i class="material-icons left">exit_to_app</i>LogOut</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </main>
+<div id="addGroupModal" class="modal">
+    <div class="modal-content">
+        <h4>Add Group</h4>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="group_name" type="text" class="validate">
+                <label class="active" for="group_name">Group Name</label>
+                <span class="helper-text" data-error="Please enter a valid name" data-success="Valid &check;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="waves-effect waves-green btn-flat" id="addGroupSubmit">Add</a>
+    </div>
+</div>
 
 <script type="text/javascript" src="../assets/libraries/jquery/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/materialize/js/materialize.min.js"></script>

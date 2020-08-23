@@ -1,69 +1,63 @@
-This will be a live chat website which will be built using HTML, CSS, JS and PHP.
+#####This will be a live chat website which will be built using HTML, CSS, JS and PHP.
 
-For styling, majorly Materialize.css will be used.
+#####For styling, majorly Materialize.css will be used.
 
-Used anime js for some text animations.
+- Used anime js for some text animations.
 
-SSE will be used for implementing live chat feature.
+- SSE will be used for implementing live chat feature.
 
-Basic Features to be implemented
+- Basic Features to be implemented
 
---> User Register/Login | Done
+  - User Register/Login | Done
 
---> Admin Page to Edit Details | Done
+  - Admin Page to Edit Details | Done
 
---> Community Chat | Done
+  - Group Chat | Done
 
---> Active/Inactive Users | Not Possible in SSE, as SSE has uni-direction connection unlike WebSockets
+  - Individual Chat | Done
 
---> Individual Chat | In Progress
+  - Dark Mode | In Progress
 
---> Chat Message Limit and Load More
+  - Recaptha on Register | Done
 
---> Dark Mode
+- Additional Advanced Features
 
---> Recaptha on Register
+  - Friends
 
-Additional Advanced Features
+  - Report a User(disable user for 7 days if complaint report exceeds a limit for eg. 10 reports)
 
---> Friends
+  - Public/Private Channels/Groups
 
---> Report a User(disable user for 7 days if complaint report exceeds a limit for eg. 10 reports)
-
---> Public/Private Channels/Groups
-
---> Any other suggestions are welcome
+  - Any other suggestions are welcome
 
 
-Object|Properties
+- Object|Properties
   
---> User
+  - User
 
-    -> name
+     - name
 
-    -> password
+     - password
     
-    -> freinds
+     - freinds
     
-    -> groups
+     - groups
     
+   - Chat
     
---> Chat
+      - id
     
-    -> id
+      - user
     
-    -> user
+      - time
     
-    -> time
+      - text
     
-    -> text
+      - group
+     
+  - Group
     
-    -> group
+    - users
     
-    
---> Group
-    
-    -> users
-    
-    -> public/private
+    - public/private
     

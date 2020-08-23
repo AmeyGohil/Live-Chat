@@ -97,6 +97,18 @@ function openChat(e) {
 				}
 			}
 		});
+		$.ajax({
+			url: "../assets/utils/chat/checkIfAdmin.php",
+			type: 'POST',
+			data: {
+				token: token
+			},
+			success: function(result){
+				if(result!=='F'){
+					$("#delete_group").fadeIn();
+				}
+			}
+		});
 		setTimeout(function () {
 			$(".chat-div")[0].scrollTop = $(".chat-div")[0].scrollHeight;
 
@@ -199,7 +211,7 @@ $(document).ready(function () {
 			e.preventDefault();
 		}
 	});
-	$(".chat-div")[0].scrollTop = $(".chat-div")[0].scrollHeight;
+	// $(".chat-div")[0].scrollTop = $(".chat-div")[0].scrollHeight;
 	$('#send').click(function(e){
 		e.preventDefault();
 		let text_el = $('.chat-window-message');
@@ -259,4 +271,23 @@ $(document).ready(function () {
 			setTimeout(()=>toggleTab(target),200);
 		},1000);
 	})
+	$("#delete_group").click(function (){
+		let token = $(".chat-window-message").attr('data-token');
+		$.ajax({
+			url: '../assets/utils/chat/deleteGroup.php',
+			type: 'POST',
+			data: {
+				token:token
+			},
+			success: function (result) {
+				if(result === 'F'){
+					M.toast({html: 'Some error occurred... Please try again...'});
+				}
+				else{
+					M.toast({html: 'Group deleted successfully!'});
+					setTimeout(function(){window.location.reload();},1000);
+				}
+			}
+		});
+	});
 });
