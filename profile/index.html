@@ -15,7 +15,9 @@
     <link type="text/css" rel="stylesheet" href="../assets/libraries/font-awesome/css/font-awesome.min.css"/>
     <link type="text/css" rel="stylesheet" href="../assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../assets/css/side-menu.css"/>
-    <link type="text/css" rel="stylesheet" href="../assets/css/profile.css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/css/profile/profile.css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/css/backgrounds.css"/>
+    <link type="text/css" rel="stylesheet" href="../assets/css/dark-mode.css"/>
 
 </head>
 <body>
@@ -23,9 +25,16 @@
 <main>
     <div class="overlay"></div>
     <div id="main">
-        <nav class="blue lighten-1">
-            <div class="nav-wrapper custom_container">
-                <a href="index.html" class="brand-logo">My Account</a>
+        <nav  class="nav-header bg-fixed bg3">
+            <div class="nav-wrapper">
+                <a href="../chat" class="brand-logo">
+                    <span class="logo">
+                        <span class="logo-letter">L</span><span class="logo-letter">i</span><span class="logo-letter">v</span><span class="logo-letter">e</span><span class="logo-letter">&nbsp;</span><span class="logo-letter">C</span><span class="logo-letter">h</span><span class="logo-letter">a</span><span class="logo-letter">t</span><span class="logo-letter">&nbsp;</span><span class="logo-letter">.</span>
+                    </span>
+                </a>
+                <ul class="right waves-effect menu">
+                    <li><div class="hamburger grey-text text-darken-4"><span></span></div></li>
+                </ul>
             </div>
         </nav>
         <div class="section">
@@ -84,23 +93,40 @@
         <div class="side-menu-items">
             <div class="side-menu-div">
                 <ul>
-                    <li><a href="index.html"><i class="material-icons left">add</i>Home</a></li>
-                    <li><a href="../profile"><i class="material-icons left">person</i>Profile</a></li>
-                    <li><a href="#!"><i class="material-icons left">group_add</i>Create Group</a></li>
-                    <li><a href="#!"><i class="material-icons left">wallpaper</i>Wallpaper</a></li>
+                    <li><a href="../chat"><i class="material-icons left">home</i>Home</a></li>
+                    <li class="active"><a href="#!"><i class="material-icons left">person</i>Profile</a></li>
+                    <li><a href="#!" id="addGroup" data-target="addGroupModal" class="modal-trigger"><i class="material-icons left">group_add</i>Create Group</a></li>
                     <li><a href="../games"><i class="material-icons left">videogame_asset</i>Games</a></li>
+                    <li><a href="#!" onclick="toggleDarkMode()"><i class="material-icons left">brightness_4</i>DarkMode</a></li>
                     <li><a href="#!" onclick="logout()"><i class="material-icons left">exit_to_app</i>LogOut</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </main>
+<div id="addGroupModal" class="modal">
+    <div class="modal-content">
+        <h4>Add Group</h4>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="group_name" type="text" class="validate">
+                <label class="active" for="group_name">Group Name</label>
+                <span class="helper-text" data-error="Please enter a valid name" data-success="Valid &check;"></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="waves-effect btn-flat" id="addGroupSubmit">Add</a>
+    </div>
+</div>
 
 <script type="text/javascript" src="../assets/libraries/jquery/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/materialize/js/materialize.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/anime/anime.min.js"></script>
 <script type="text/javascript" src="../assets/libraries/crypto/crypto-js.min.js"></script>
 <script type="text/javascript" src="../assets/js/side-menu.js"></script>
+<script type="text/javascript" src="../assets/js/logout.js"></script>
+<script type="text/javascript" src="../assets/js/dark-mode.js"></script>
 <script type="text/javascript" src="../assets/js/profile/profile.js"></script>
 
 </body>

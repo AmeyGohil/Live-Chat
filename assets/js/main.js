@@ -11,9 +11,9 @@ $(document).ready(function (){
 	});
 
 	let paperMenu = {
-		$window: $('.paper-window'),
-		$paperFront: $('.paper-window .paper-front'),
-		$hamburger: $('.hamburger'),
+		window: $('.paper-window'),
+		paperFront: $('.paper-window .paper-front'),
+		hamburger: $('.hamburger'),
 		offset: 1800,
 		pageHeight: $('.paper-window .paper-front').outerHeight(),
 
@@ -32,9 +32,9 @@ $(document).ready(function (){
 		// 	console.log('closing...');
 		// },
 		updateTransformOrigin: function() {
-			scrollTop = this.$window.scrollTop();
+			scrollTop = this.window.scrollTop();
 			equation = (scrollTop + this.offset) / this.pageHeight * 100;
-			this.$paperFront.css('transform-origin', 'center ' + equation + '%');
+			this.paperFront.css('transform-origin', 'center ' + equation + '%');
 		},
 		//hamburger icon fix to keep its position
 		// hamburgerFix: function(opening) {
@@ -55,7 +55,7 @@ $(document).ready(function (){
 		bindEvents: function() {
 			// this.$hamburger.on('click', this.open.bind(this));
 			// $('.close').on('click', this.close.bind(this));
-			this.$window.on('scroll', this.updateTransformOrigin.bind(this));
+			this.window.on('scroll', this.updateTransformOrigin.bind(this));
 		},
 		init: function() {
 			this.bindEvents();
@@ -65,10 +65,9 @@ $(document).ready(function (){
 
 	paperMenu.init();
 
-	$(".hamburger").click(function () {
+	$(".menu").click(function () {
 		$(".paper-window").addClass('tilt');
-		this.$window.addClass('tilt');
-		$(this).off('click');
+		// $(this).off('click');
 	});
 	$('.custom_container').click(function () {
 		$(".tilt").removeClass('tilt');
@@ -156,7 +155,9 @@ $(document).ready(function (){
 		$(this).addClass('btn--clicked');
 		let el = $(".color--ripple");
 		el.addClass('expanded');
-		$("#close_form").addClass('show');
+		setTimeout(function () {
+			$("#close_form").addClass('show');
+		},600);
 		$("#form_div").addClass('show');
 	});
 	$("#close_form").click(function (e) {
@@ -169,6 +170,25 @@ $(document).ready(function (){
 		duration:500,
 		swipeable: true
 	});
+	let dark_mode = localStorage.getItem("darkmode");
+	if(dark_mode === null || dark_mode === false || dark_mode === 'false'){
+		$('.btn-dark-off').addClass('scale-out');
+		$('.btn-dark-on').addClass('scale-in');
+	}
+	else{
+		$('.btn-dark-on').addClass('scale-out');
+		$('.btn-dark-off').addClass('scale-in');
+	}
+	$(".btn-dark-off").click(function (){
+		$(this).removeClass('scale-in').addClass('scale-out');
+		$('.btn-dark-on').removeClass('scale-out').addClass('scale-in');
+		toggleDarkMode();
+	})
+	$(".btn-dark-on").click(function (){
+		$(this).removeClass('scale-in').addClass('scale-out');
+		$('.btn-dark-off').removeClass('scale-out').addClass('scale-in');
+		toggleDarkMode();
+	})
 });
 // var instance = M.Tabs.getInstance(elem);
 // instance.updateTabIndicator();

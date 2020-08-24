@@ -37,12 +37,10 @@ function say(from,message,timestamp,me){
 	if(message === '') return;
 	$(".chat-thread").append(
 		'               <div class="'+ ((me)?'me':'not-me') +'">\n' +
+		'                        <div class="date">' + get_days(timestamp) + '</div>' +
 		'                        <div class="name">' + from + '</div>\n' +
 		'                        <div class="text">' + message + '</div>\n' +
-		'                        <div class="timestamp">' +
-		'                            <div class="time">' + get_12_hr(timestamp) + '</div>' +
-	    '                            <div class="date">' + get_days(timestamp) + '</div>' +
-	    '                        </div>' +
+		'                        <div class="time">' + get_12_hr(timestamp) + '</div>' +
 		'                    </div>'
 	);
 	$(".chat-div")[0].scrollTop = $(".chat-div")[0].scrollHeight;
@@ -86,12 +84,10 @@ function openChat(e) {
 						temp = '';
 					if(chat_email===email) temp+='<div class="me">';
 					else temp+= '<div class="not-me">';
+					temp+= '<div class="date">' + get_days(chat_timestamp) + '</div>';
 					temp+= '<div class="name">' + chat_name + '</div>';
 					temp+= '<div class="text">' + chat_message + '</div>';
-					temp+= '<div class="timestamp">';
 					temp+= '<div class="time">' + get_12_hr(chat_timestamp) + '</div>';
-					temp+= '<div class="date">' + get_days(chat_timestamp) + '</div>';
-					temp+= '</div>';
 					temp+= '</div>';
 					$(".chat-thread").append(temp);
 				}

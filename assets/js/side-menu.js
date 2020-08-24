@@ -8,6 +8,17 @@ $(document).ready(function () {
 		$(".side-menu").toggleClass('active');
 		$(".overlay").toggleClass('active');
 	});
+	$(".side-menu-div>ul>li").click(function () {
+		if($(this).find('a').find('i').html()==='wallpaper') {
+			alert('This feature is yet to be implemented...');
+		}
+		else if($(this).find('a').find('i').html()==='brightness_4') {
+		}
+		else{
+			$(".side-menu").toggleClass('active');
+			$(".overlay").toggleClass('active');
+		}
+	});
 	$("#addGroupModal").modal();
 	$("#addGroupSubmit").click(function(e) {
 		e.preventDefault();

@@ -15,30 +15,34 @@
     <link type="text/css" rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css"/>
     <link type="text/css" rel="stylesheet" href="assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/backgrounds.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/dark-mode.css"/>
 
 </head>
 <body>
 
-<div id="paper-back">
-    <div class="close"></div>
+<div id="paper-back" class="bg6">
+    <div class="close waves-effect"></div>
     <div>
-        <a id="page-1" class="active" href="#">Home</a>
-        <a id="page-2" href="#">About Us</a>
-        <a id="page-3" href="#">Our Work</a>
-        <a id="page-4" href="#">Contact</a>
+        <a id="page-1" class="active waves-effect" href="#!">Home</a>
+        <a id="page-2" class="waves-effect" href="#!">About Me</a>
     </div>
 </div>
 <div class="paper-window">
     <div class="paper-front" id="window-1">
-        <nav class="blue lighten-1">
+        <nav  class="nav-header bg-fixed bg3">
             <div class="nav-wrapper">
-                <a href="index.html" class="brand-logo"><img src="assets/images/logo.png" alt="Live Chat Logo"></a>
-                <ul class="right hide-on-med-and-down waves-effect">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo">
+                        <span class="logo-letter">L</span><span class="logo-letter">i</span><span class="logo-letter">v</span><span class="logo-letter">e</span><span class="logo-letter">&nbsp;</span><span class="logo-letter">C</span><span class="logo-letter">h</span><span class="logo-letter">a</span><span class="logo-letter">t</span><span class="logo-letter">&nbsp;</span><span class="logo-letter">.</span>
+                    </span>
+                </a>
+                <ul class="right waves-effect menu">
                     <li><div class="hamburger grey-text text-darken-4"><span></span></div></li>
                 </ul>
             </div>
         </nav>
-        <div class="custom_container blue lighten-5">
+        <div class="custom_container bg1 bg-s100">
             <section class="valign-wrapper">
                 <div class="section">
                     <h1 class="ml2">WELCOME&nbsp;&nbsp;&nbsp;TO</h1>
@@ -50,11 +54,11 @@
                     </h1>
                     <div id="button">
                         <a id="get_started" class="waves-effect waves-custom btn custom_btn">Get Started!</a>
-                        <span class="color color--ripple"></span>
+                        <span class="color color--ripple bg4"></span>
                     </div>
                 </div>
 
-                <a class="btn-floating btn-large waves-effect waves-close" id="close_form"><i class="fa fa-times"></i></a>
+                <a class="btn-floating btn-large waves-effect waves-close scale-transition" id="close_form"><i class="fa fa-times"></i></a>
 
                 <div id="form_div">
                     <div class="form">
@@ -121,31 +125,50 @@
                     </div>
                 </div>
             </section>
+            <a class="btn waves-effect waves-light scale-transition btn-dark-on"><i class="material-icons">brightness_4</i></a>
+            <a class="btn waves-effect waves-light scale-transition btn-dark-off"><i class="material-icons">brightness_4</i></a>
         </div>
     </div>
     <div class="paper-front" id="window-2" style="display: none">
-        <nav class="blue lighten-1">
+        <nav  class="nav-header bg-fixed bg3">
             <div class="nav-wrapper">
-                <a href="index.html" class="brand-logo"><img src="assets/images/logo.png" alt="Live Chat Logo"></a>
-                <ul class="right hide-on-med-and-down waves-button-input">
+                <a href="index.html" class="brand-logo">
+                    <span class="logo">
+                        <span class="logo-letter">L</span><span class="logo-letter">i</span><span class="logo-letter">v</span><span class="logo-letter">e</span><span class="logo-letter">&nbsp;</span><span class="logo-letter">C</span><span class="logo-letter">h</span><span class="logo-letter">a</span><span class="logo-letter">t</span><span class="logo-letter">&nbsp;</span><span class="logo-letter">.</span>
+                    </span>
+                </a>
+                <ul class="right waves-effect menu">
                     <li><div class="hamburger grey-text text-darken-4"><span></span></div></li>
                 </ul>
             </div>
         </nav>
-        <div class="custom_container blue lighten-5">
+        <div class="custom_container contact">
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
             <section class="valign-wrapper">
                 <div class="section">
+                    <div class="profile-image">
+                        <img src="assets/images/profile.jpeg" alt="Profile Logo">
+                    </div>
                     <h1 class="ml11">
                       <span class="text-wrapper">
-                        <span class="line line1"></span>
-                        <span class="letters">Rec.&nbsp;Chat&nbsp;.</span>
+                        Amey Gohil
                       </span>
                     </h1>
-                    <a class="waves-effect waves-light btn blue accent-2"><i class="fa fa-pencil-square-o right"></i>register</a>&nbsp;
-                    <a class="waves-effect waves-light btn green lighten-1"><i class="fa fa-sign-in right"></i>login</a>
-
+                    <div class="contact-icons">
+                        <a href="mailto: amey23399@gmail.com" class="contact-icon" target="_blank"><i class="fa fa-envelope"></i></a>
+                        <a href="https://facebook.com/amey.gohil/" class="contact-icon" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://linkedin.com/in/ameygohil/" class="contact-icon" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://twitter.com/AmeyGohil" class="contact-icon" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://github.com/AmeyGohil" class="contact-icon" target="_blank"><i class="fa fa-github-alt"></i></a>
+                        <a href="https://codepen.io/AmeyGohil" class="contact-icon" target="_blank"><i class="fa fa-codepen"></i></a>
+                    </div>
                 </div>
+
             </section>
+            <a class="btn waves-effect waves-light scale-transition btn-dark-on"><i class="material-icons">brightness_4</i></a>
+            <a class="btn waves-effect waves-light scale-transition btn-dark-off"><i class="material-icons">brightness_4</i></a>
         </div>
     </div>
 </div>
@@ -154,6 +177,8 @@
 <script type="text/javascript" src="assets/libraries/materialize/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/libraries/anime/anime.min.js"></script>
 <script type="text/javascript" src="assets/libraries/crypto/crypto-js.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Le8S8IZAAAAALbRZUhzXajfnke9Hx_QZStHdFKp"></script>
+<script type="text/javascript" src="assets/js/dark-mode.js"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
 <script type="text/javascript" src="assets/js/login.js"></script>
 <script type="text/javascript" src="assets/js/register.js"></script>

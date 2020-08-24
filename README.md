@@ -16,22 +16,19 @@
 
   - Individual Chat | Done
 
-  - Dark Mode | In Progress
+  - Dark Mode | Done
 
-  - Recaptha on Register | Done
+  - Recaptha v3 on Register/Login | Done
 
 - Additional Advanced Features
 
-  - Friends
+  - Games | Done
 
-  - Report a User(disable user for 7 days if complaint report exceeds a limit for eg. 10 reports)
+  - Create Group | Done 
 
-  - Public/Private Channels/Groups
+  - Change Chat Wallpaper | Not Done
 
-  - Any other suggestions are welcome
-
-
-- Object|Properties
+- Object | Properties
   
   - User
 
