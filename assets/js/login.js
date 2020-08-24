@@ -4,7 +4,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		$("#login-error").slideUp(10).slideDown().html('<span style="color:blue">Processing...   <i class="fa fa-circle-o-notch fa-spin" style="font-size: 0.75em"></i></span>');
 		grecaptcha.ready(function() {
-			grecaptcha.execute('6Le8S8IZAAAAALbRZUhzXajfnke9Hx_QZStHdFKp', {action: 'login'}).then(function (token) {
+			grecaptcha.execute('6LdDl8IZAAAAABFrUFcsXNMwaYxeHJLWs7l9XAFg', {action: 'login'}).then(function (token) {
 				$.ajax({
 					url: "./assets/utils/areYouABot.php",
 					type: "POST",

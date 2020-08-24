@@ -27,23 +27,61 @@ function toggleTab(tab){
 				}
 			}
 		});
-		console.log(check);
+		// console.log(check);
 		if(check===0) $(tab+" .no-search").removeClass('hidden');
 		else $(tab+" .no-search").addClass('hidden');
 	});
 }
-function say(from,message,timestamp,me){
+function say(from,message,timestamp,me,type){
 	message = message.trim();
 	if(message === '') return;
-	$(".chat-thread").append(
-		'               <div class="'+ ((me)?'me':'not-me') +'">\n' +
-		'                        <div class="date">' + get_days(timestamp) + '</div>' +
-		'                        <div class="name">' + from + '</div>\n' +
-		'                        <div class="text">' + message + '</div>\n' +
-		'                        <div class="time">' + get_12_hr(timestamp) + '</div>' +
-		'                    </div>'
-	);
+	if(type==='user'){
+		$(".chat-thread").append(
+			'               <div class="'+ ((me)?'me':'not-me') +'">\n' +
+			'                        <div class="date">' + get_days(timestamp) + '</div>' +
+			'                        <div class="text">' + message + '</div>\n' +
+			'                        <div class="time">' + get_12_hr(timestamp) + '</div>' +
+			'                    </div>'
+		);
+	}
+	else{
+		$(".chat-thread").append(
+			'               <div class="'+ ((me)?'me':'not-me') +'">\n' +
+			'                        <div class="date">' + get_days(timestamp) + '</div>' +
+			'                        <div class="name">' + from + '</div>\n' +
+			'                        <div class="text">' + message + '</div>\n' +
+			'                        <div class="time">' + get_12_hr(timestamp) + '</div>' +
+			'                    </div>'
+		);
+	}
 	$(".chat-div")[0].scrollTop = $(".chat-div")[0].scrollHeight;
+}
+async function refresh_chat(token,type){
+	setTimeout(function(){
+		var server = new EventSource("../assets/utils/chat/server.php");
+		server.onerror = function(err) {
+			// M.toast({html: 'Some error occurred... Refreshing...'});
+			console.log('Some error occurred... Refreshing...'+Date());
+			server.close();
+			refresh_chat(token,type);
+
+			// setTimeout(function () {
+			// 	window.location.reload();
+			// },1000);
+		};
+		let type_token = type + '_' + token;
+		server.addEventListener(type_token, function(event) {
+			let data = JSON.parse(event.data);
+			for(let i = 0; i < data.length ; i++){
+				if(data[i].email === email) continue;
+				say(data[i].name, data[i].message, data[i].timestamp,false,type);
+			}
+		});
+	},500);
+	// server.addEventListener('debug', function(event) {
+	// 	console.log('listening '+type);
+	// 	console.log(event.data);
+	// });
 }
 function openChat(e) {
 	$(".chat-loader").fadeIn(100);
@@ -63,7 +101,7 @@ function openChat(e) {
 				$("#chat-header").html(chat_name);
 				$(".chat-loader").fadeOut();
 				$(".chat-window-message").attr('data-token',token).attr('data-type',type);
-				console.log(result);
+				// console.log(result);
 				let chats;
 				if (result === 'F') {
 					chats = [];
@@ -85,7 +123,7 @@ function openChat(e) {
 					if(chat_email===email) temp+='<div class="me">';
 					else temp+= '<div class="not-me">';
 					temp+= '<div class="date">' + get_days(chat_timestamp) + '</div>';
-					temp+= '<div class="name">' + chat_name + '</div>';
+					if(type!=='user') temp+= '<div class="name">' + chat_name + '</div>';
 					temp+= '<div class="text">' + chat_message + '</div>';
 					temp+= '<div class="time">' + get_12_hr(chat_timestamp) + '</div>';
 					temp+= '</div>';
@@ -110,24 +148,26 @@ function openChat(e) {
 
 			var server = new EventSource("../assets/utils/chat/server.php");
 			server.onerror = function(err) {
-				M.toast({html: 'Some error occurred... Refreshing...'});
+				// M.toast({html: 'Some error occurred... Refreshing...'});
+				console.log('Some error occurred... Refreshing...');
 				server.close();
+				refresh_chat(token,type);
 				// setTimeout(function () {
 				// 	window.location.reload();
 				// },1000);
 			};
-			type = type + '_' + token;
-			server.addEventListener(type, function(event) {
+			let type_token = type + '_' + token;
+			server.addEventListener(type_token, function(event) {
 				let data = JSON.parse(event.data);
 				for(let i = 0; i < data.length ; i++){
 					if(data[i].email === email) continue;
-					say(data[i].name, data[i].message, data[i].timestamp,false);
+					say(data[i].name, data[i].message, data[i].timestamp,false,type);
 				}
 			});
-			server.addEventListener('debug', function(event) {
-				console.log('listening '+type);
-				console.log(event.data);
-			});
+			// server.addEventListener('debug', function(event) {
+			// 	console.log('listening '+type);
+			// 	console.log(event.data);
+			// });
 
 		},200);
 	},200);
@@ -143,7 +183,7 @@ $(document).ready(function () {
 		$.ajax({
 			url: "../assets/utils/getDetails.php",
 			success: function (result) {
-				console.log(result);
+				// console.log(result);
 				if(result === 'F'){
 					logout();
 					window.location.href = '../';
@@ -159,7 +199,7 @@ $(document).ready(function () {
 		$.ajax({
 			url: url,
 			success: function (result) {
-				console.log(result);
+				// console.log(result);
 				if(result === 'F'){
 					logout();
 					window.location.href = '../';
@@ -233,7 +273,7 @@ $(document).ready(function () {
 				}
 				else{
 					$('.chat-window-message').val('');
-					say(name, text, timestamp.toString(),true);
+					say(name, text, timestamp.toString(),true,type);
 				}
 			}
 		});

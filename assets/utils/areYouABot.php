@@ -1,11 +1,11 @@
 <?php
-
+include "db_config.php";
 function areYouABot(){
     try {
         session_start();
         if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])){
             $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-            $recaptcha_secret = '6Le8S8IZAAAAAMw4SyqPaFG-npAAFJevacPbnTc4';
+            $recaptcha_secret = RECAPTCHA_SECRET;
             $recaptcha_response = $_POST['token'];
 
             // Make and decode POST request:
