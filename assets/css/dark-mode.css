@@ -7,6 +7,9 @@
 .dark .custom_container .section {
     background-color: transparent;
 }
+.dark .chat-thread .section {
+    background-color: transparent;
+}
 .dark .ml11 .line{
     background-color: #eeeeee;
 }
