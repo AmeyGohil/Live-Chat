@@ -1,14 +1,14 @@
 $(document).ready(function (){
 
-	$.ajax({
-		url: "assets/utils/getDetails.php",
-		type: "POST",
-		success: function (result) {
-			if(result !== 'F'){
-				window.location.href = './chat';
-			}
-		}
-	});
+	// $.ajax({
+	// 	url: "assets/utils/getDetails.php",
+	// 	type: "POST",
+	// 	success: function (result) {
+	// 		if(result !== 'F'){
+	//
+	// 		}
+	// 	}
+	// });
 
 	let paperMenu = {
 		window: $('.paper-window'),
