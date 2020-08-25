@@ -46,7 +46,7 @@ function login(){
         }
     }
     catch(Exception $e){
-        return "F";
+        return $e;
     }
 }
 echo login();
