@@ -78,10 +78,10 @@ async function refresh_chat(token,type){
 			}
 		});
 	},500);
-	// server.addEventListener('debug', function(event) {
-	// 	console.log('listening '+type);
-	// 	console.log(event.data);
-	// });
+	server.addEventListener('debug', function(event) {
+		console.log('listening '+type);
+		console.log(event.data);
+	});
 }
 function openChat(e) {
 	$(".chat-loader").fadeIn(100);
@@ -152,6 +152,7 @@ function openChat(e) {
 				console.log('Some error occurred... Refreshing...');
 				server.close();
 				refresh_chat(token,type);
+
 				// setTimeout(function () {
 				// 	window.location.reload();
 				// },1000);
@@ -164,10 +165,10 @@ function openChat(e) {
 					say(data[i].name, data[i].message, data[i].timestamp,false,type);
 				}
 			});
-			// server.addEventListener('debug', function(event) {
-			// 	console.log('listening '+type);
-			// 	console.log(event.data);
-			// });
+			server.addEventListener('debug', function(event) {
+				console.log('listening '+type);
+				console.log(event.data);
+			});
 
 		},200);
 	},200);

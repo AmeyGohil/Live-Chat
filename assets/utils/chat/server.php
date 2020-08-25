@@ -88,12 +88,12 @@ include '../db_linker.php';
                             ob_end_flush();
                         }
                         flush();
-//                        echo "event: debug\n",
-//                        "data: {'token':'".$event."','data':'".$push."'}\n\n";
-//                        while (ob_get_level() > 0) {
-//                            ob_end_flush();
-//                        }
-//                        flush();
+                        echo "event: debug\n",
+                        "data: {'token':'".$event."','data':'".$push."'}\n\n";
+                        while (ob_get_level() > 0) {
+                            ob_end_flush();
+                        }
+                        flush();
                     }
                 }
 //                else{
